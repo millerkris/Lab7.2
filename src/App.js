@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
+const OnlyEven = ({ arr }) => {
+  const evenNumbers = arr.filter(num => num % 2 === 0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {evenNumbers.join(', ')}
+    </div>
+  );
+}
+
+const App = () => {
+  return (
+    <div>
+      <OnlyEven arr={[14, 5, 6, 12, 21, 2]} />
     </div>
   );
 }
